@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gym Website</title>
+        <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #da6b6b;        
+            background-size: cover;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(51, 51, 51, 0.8); /* Adding transparency to the navbar */
+            padding: 10px 20px;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links li {
+            display: inline;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background-color: #b81818;
+            border-radius: 4px;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-buttons button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-buttons button:hover {
+            background-color: #45a049;
+        }
+        
+        .social-media {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+        
+        .social-media a {
+            color: white;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        
+        .social-media a:hover {
+            color: #ddd;
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .modal-content {
+            background-color: rgb(175, 78, 78);
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            border-radius: 18px;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .login-form label {
+            margin-bottom: 8px;
+        }
+        
+        .login-form input {
+            margin-bottom: 16px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        
+        .login-form button {
+            background-color: #4CAF50;
+            color: rgb(144, 29, 29);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .login-form button:hover {
+            background-color: #45a049;
+        }
+        .gym-images {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .gym-images img {
+            width: 18%;
+            height: 14%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+
+        }
+        
+        .gym-images img:hover {
+            transform: scale(1.05);
+           
+
+        }
+        .sections {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+        
+        .section {
+            flex: 1;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .section h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .section p {
+            font-size: 16px;
+            color: #ffffff;
+        }
+        .section img:hover {
+            transform: scale(1.05);
+        }
+        .customer-agreement {
+            margin: 20px;
+            text-align: center;
+        }
+        
+        .customer-agreement h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .agreement-images {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .agreement-images img {
+            width: 30%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rebeccapurple
+        }
+        .agreement-images img:hover {
+            transform: scale(1.05);
+           
+
+        }
+        .customer-Reviews{
+            text-align: center;
+            color: white;
+        }
+           
+        
+</style>
+
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport"
+                    content="width=device-width, initial-scale=1.0">
+                <title>Gym Website</title>
+                <link rel="stylesheet" href="styles.css">
+                <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+            </head>
+            <body>
+                <nav class="navbar">
+                    <div class="logo">
+                        <img src="logo.jpeg" alt="Gym Logo">
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#gym-center">Gym Center</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                    <div class="nav-buttons">
+                        <button>Contact</button>
+                        <button>Emails</button>
+                        <button>Register</button>
+                        <button id="loginBtn">Login</button>
+                    </div>
+                    <div class="social-media">
+                        <a
+                            href="https://www.instagram.com/invites/contact/?igsh=mra661ndspz8&utm_content=lbvw9nn"
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a
+                            href="https://www.facebook.com/shaheen.rajpoot.148?mibextid=ZbWKwL"
+                            target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="shaheenrajpoot53@gmail.com" target="_blank"><i
+                                class="fas fa-envelope"></i></a>
+
+                    </div>
+                </nav>
+
+                <!-- Login Modal -->
+                <div id="loginModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <form class="login-form">
+                            <h2>Login</h2>
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username"
+                                required>
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password"
+                                required>
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="gym-images">
+                    <img src="bg.jpg" alt="Gym Image 1">
+                    <img src="bg1.jpg" alt="Gym Image 2">
+                    <img src="bg3.jpg" alt="Gym Image 3">
+                    <img src="boys.jpg" alt="Gym Image 4">
+                    <img src="logo3.jpeg" alt="Gym Image 5">
+
+                </div>
+                <div class="sections">
+                    <div class="section boy">
+                        <h2>For Boys</h2>
+                        <img src="boyssssss.jpeg" alt="For Boys">
+                        <p>Explore our specialized workout programs designed for
+                            boys. From strength training to cardio, we have the
+                            perfect routines for building muscle and enhancing
+                            fitness.</p>
+                    </div>
+                    <div class="section girl">
+                        <h2>For Girls</h2>
+                        <img src="girlssss.jpeg" alt="For Girls">
+                        <p>Discover our tailored fitness programs for girls. Our
+                            sessions focus on flexibility, strength, and overall
+                            wellness to help you stay fit and healthy.</p>
+                    </div>
+                </div>
+                <div class="customer-Reviews">
+                    <h1>Ratting and Reviews</h1>
+                    <div class="agreement-images">
+                        <img src="customer3.jpg" alt="Agreement Image 1">
+                        <img src="customerreviews3.png" alt="Agreement Image 2">
+                        <img src="customer.webp" alt="Agreement Image 3">
+                    </div>
+                    <p>Our customer agreement outlines the terms and conditions
+                        for using our gym facilities and services. Please review
+                        the images below to understand our policies and
+                        agreements.</p>
+
+                </div>
+
+                <footer>
+                    <p>&copy; All rights reserved by Shaheen2024</p>
+                </footer>
+            </body>
+        </html>
+        <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const modal = document.getElementById('loginModal');
+        const loginBtn = document.getElementById('loginBtn');
+        const closeBtn = document.getElementsByClassName('close')[0];
+    
+        // Open the modal
+        loginBtn.onclick = function() {
+            modal.style.display = 'block';
+        }
+    
+        // Close the modal
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+    
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    });
+    
+</script>
